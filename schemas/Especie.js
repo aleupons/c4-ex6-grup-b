@@ -1,5 +1,5 @@
-const sequelize = require("sequelize");
 const { DataTypes } = require("sequelize");
+const sequelize = require("../bd/conexion");
 
 const Especie = sequelize.define(
   "Especie",
