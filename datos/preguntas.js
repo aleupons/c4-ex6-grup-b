@@ -1,3 +1,5 @@
+const { dniEnbd } = require("../schemas/Duenyo");
+
 const preguntas = [
   {
     name: "dni",
@@ -21,6 +23,9 @@ const preguntas = [
       { value: "adoptarUnAnimal", name: "Adoptar un animal" },
       { value: "cambiarNombre", name: "Cambiar mi nombre" },
     ],
+    /* when: (respuestaAnterior) => {
+      dniEnbd(respuestaAnterior);
+    }, */
   },
   {
     name: "especie",
