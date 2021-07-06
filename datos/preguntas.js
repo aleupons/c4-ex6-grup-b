@@ -24,7 +24,6 @@ const preguntas = [
       { value: "adoptarUnAnimal", name: "Adoptar un animal" },
       { value: "cambiarNombre", name: "Cambiar mi nombre" },
     ],
-    /* when: (respuestaAnterior) => respuestaAnterior.transporte === "Metro", */
   },
   {
     name: "especie",
