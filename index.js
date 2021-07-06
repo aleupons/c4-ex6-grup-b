@@ -2,6 +2,7 @@ const inquirer = require("inquirer");
 const { preguntas } = require("./datos/preguntas");
 const { listarAnimales } = require("./listarAnimales");
 const { listarEspecieAnimales } = require("./ListarEspecieAnimales");
+const { mostrarDatosAnimal } = require("./mostrarDatosAnimal");
 
 inquirer.prompt(preguntas).then((response) => {
   console.log(response); // Per veure forma de l'objecte respostes
@@ -9,5 +10,7 @@ inquirer.prompt(preguntas).then((response) => {
     listarAnimales();
   } else if (response.opcion === "todosAnimalesEspecie") {
     listarEspecieAnimales(response.especie);
+  } else if (response.opcion === "datosUnAnimal") {
+    mostrarDatosAnimal(response.chipAnimal);
   }
 });
