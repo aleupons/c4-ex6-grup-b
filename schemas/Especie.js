@@ -1,9 +1,8 @@
 const sequelize = require("sequelize");
 const { DataTypes } = require("sequelize");
-const { Animal } = require("./Animal");
 
-const Especies = sequelize.define(
-  "Especies",
+const Especie = sequelize.define(
+  "Especie",
   {
     id: {
       type: DataTypes.INTEGER,
@@ -12,17 +11,13 @@ const Especies = sequelize.define(
     },
     nombre: {
       type: DataTypes.STRING(32),
-      allowNull: false,
       unique: true,
     },
   },
   {
-    tableName: "animales",
+    tableName: "especies",
     timestamps: false,
   }
 );
 
-Animal.hasMany(Especies, { foreignKey: "animal" });
-Especies.belongsTo(Animal, { foreignKey: "especies" });
-
-module.exports = Especies;
+module.exports = Especie;
