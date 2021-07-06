@@ -12,11 +12,16 @@ const listarEspecieAnimales = async (nombreEspecie) => {
       ["nombre", "DESC"],
     ],
   });
-  console.log(`Animales de la especie ${nombreEspecie}:`);
+  console.log(`\nAnimales de la especie ${nombreEspecie}:`);
+  let comptador = 0;
   for (const animal of animales) {
     if (nombreEspecie.toLowerCase() === animal.Especie.nombre.toLowerCase()) {
       console.log(animal.nombre);
+      comptador++;
     }
+  }
+  if (!comptador) {
+    console.log(`No tienes animales de la especie ${nombreEspecie}`);
   }
 };
 
