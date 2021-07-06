@@ -8,7 +8,7 @@ const preguntas = [
   },
   {
     name: "opcion",
-    message: "¿Qué información extra quiere obtener de cada parada?",
+    message: "Opciones",
     type: "list",
     choices: [
       { value: "todosLosAnimales", name: "Listar todos mis animales" },
