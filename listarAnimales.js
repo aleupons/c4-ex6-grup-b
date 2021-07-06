@@ -17,8 +17,6 @@ const listarAnimales = async () => {
   }
 };
 
-listarAnimales();
-
 module.exports = {
   listarAnimales,
 };

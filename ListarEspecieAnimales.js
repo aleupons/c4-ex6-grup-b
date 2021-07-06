@@ -2,9 +2,9 @@ const Especie = require("./schemas/Especie");
 const Animal = require("./schemas/Animal");
 
 const listarEspecieAnimales = async (nombreEspecie) => {
-  const especies = await Especie.findAll({
+  const animales = await Animal.findAll({
     include: {
-      model: Animal,
+      model: Especie,
       required: true,
     },
     order: [
@@ -12,16 +12,12 @@ const listarEspecieAnimales = async (nombreEspecie) => {
       ["nombre", "DESC"],
     ],
   });
-  for (const especie of especies) {
-    if (nombreEspecie === especie.nombre) {
-      console.log(especie.nombre, especie.Animal.nombre);
-    } else {
-      console.log(`No tienes animales de la especie ${nombreEspecie}`);
+  console.log(`Animales de la especie ${nombreEspecie}:`);
+  for (const animal of animales) {
+    if (nombreEspecie.toLowerCase() === animal.Especie.nombre.toLowerCase()) {
+      console.log(animal.nombre);
     }
   }
 };
 
-listarEspecieAnimales("perro");
-
-module.exports = listarEspecieAnimales;
-
+module.exports = { listarEspecieAnimales };
