@@ -7,7 +7,7 @@ const sequelize = new Sequelize({
   password: process.env.DB_PASS,
   database: "animales",
   dialect: "mysql",
-  // logging: false,
+  logging: false,
 });
 
 /* sequelize
