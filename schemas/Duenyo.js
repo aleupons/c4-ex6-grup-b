@@ -34,14 +34,7 @@ const Duenyo = sequelize.define(
 
 const dniEnbd = async (dniEscrito) => {
   const duenyo = await Duenyo.findOne({ where: { dni: dniEscrito } });
-  if (duenyo === null) {
-    console.log("Not found!");
-    return false;
-  } else {
-    console.log(duenyo instanceof Duenyo);
-    console.log(duenyo.dni);
-  }
-  return true;
+  return !!duenyo;
 };
 
 module.exports = {

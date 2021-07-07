@@ -1,11 +1,12 @@
-const { dniEnbd } = require("../schemas/Duenyo");
-
-const preguntas = [
+const preguntasDni = [
   {
     name: "dni",
     message: "Por favor inidique su DNI:",
     type: "input",
   },
+];
+
+const preguntas = [
   {
     name: "opcion",
     message: "Opciones",
@@ -23,9 +24,6 @@ const preguntas = [
       { value: "adoptarUnAnimal", name: "Adoptar un animal" },
       { value: "cambiarNombre", name: "Cambiar mi nombre" },
     ],
-    /* when: (respuestaAnterior) => {
-      dniEnbd(respuestaAnterior);
-    }, */
   },
   {
     name: "especie",
@@ -60,4 +58,5 @@ const preguntas = [
 
 module.exports = {
   preguntas,
+  preguntasDni,
 };
