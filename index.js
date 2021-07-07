@@ -7,7 +7,7 @@ const { dniEnbd } = require("./schemas/Duenyo");
 const { cambiarNombre } = require("./cambiarNombre");
 
 inquirer.prompt(preguntasDni).then(async (response) => {
-  const hayDuenyo = await dniEnbd(response.dni);
+  const { hayDuenyo, duenyo } = await dniEnbd(response.dni);
   if (hayDuenyo) {
     inquirer.prompt(preguntas).then((response) => {
       console.log(response); // Per veure forma de l'objecte respostes

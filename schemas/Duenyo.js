@@ -34,7 +34,10 @@ const Duenyo = sequelize.define(
 
 const dniEnbd = async (dniEscrito) => {
   const duenyo = await Duenyo.findOne({ where: { dni: dniEscrito } });
-  return !!duenyo;
+  return {
+    hayDuenyo: !!duenyo,
+    duenyo: duenyo.dataValues,
+  };
 };
 
 module.exports = {
