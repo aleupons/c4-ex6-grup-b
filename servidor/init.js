@@ -1,18 +1,15 @@
 require("dotenv").config();
+const chalk = require("chalk");
 const express = require("express");
+const { errorServidor } = require("./errores");
 
 const app = express();
 const puerto = process.env.PUERTO || 4001;
 
 const server = app.listen(puerto, () => {
-  console.log(`Servidor escuchando en el puerto ${puerto}`);
+  console.log(chalk.yellow(`Servidor escuchando en el puerto ${puerto}`));
 });
 
-server.on("error", (err) => {
-  console.log("No se ha podido levantar el servidor");
-  if (err.code === "EADDRINUSE") {
-    console.log(`El port ${puerto} está ocupado`);
-  }
-});
+server.on("error", (err) => errorServidor(err, puerto));
 
 module.exports = app;
