@@ -35,7 +35,7 @@ CREATE TABLE `animales` (
   KEY `duenyo` (`duenyo`),
   CONSTRAINT `animales_ibfk_1` FOREIGN KEY (`especie`) REFERENCES `especies` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT `animales_ibfk_2` FOREIGN KEY (`duenyo`) REFERENCES `duenyos` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +44,7 @@ CREATE TABLE `animales` (
 
 LOCK TABLES `animales` WRITE;
 /*!40000 ALTER TABLE `animales` DISABLE KEYS */;
-INSERT INTO `animales` VALUES (1,'Ninja',8,4351,3,1),(2,'Ghost',3,7481,2,2),(3,'Perraco',14,1424,1,3);
+INSERT INTO `animales` VALUES (1,'Ninja',8,4351,3,1),(2,'Ghost',3,7481,2,2),(3,'Perraco',14,1424,1,3),(7,'Squirtle',8,4362,3,2),(8,'Gato Di Merda',3,7492,2,3),(9,'Quisso',14,1435,1,1);
 /*!40000 ALTER TABLE `animales` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -109,4 +109,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-07-06 13:53:26
+-- Dump completed on 2021-07-07  9:18:54
