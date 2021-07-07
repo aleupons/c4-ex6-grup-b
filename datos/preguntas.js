@@ -38,7 +38,6 @@ const preguntas = [
     type: "input",
     when: (respuestaAnterior) => respuestaAnterior.opcion === "datosUnAnimal",
   },
-
   {
     name: "nuevoNombre",
     message: "Por favor indique un nuevo nombre: ",
