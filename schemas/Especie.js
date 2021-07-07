@@ -20,4 +20,4 @@ const Especie = sequelize.define(
   }
 );
 
-module.exports = Especie;
+module.exports = { Especie };
