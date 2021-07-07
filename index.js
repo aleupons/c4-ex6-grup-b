@@ -4,6 +4,7 @@ const { listarAnimales } = require("./listarAnimales");
 const { listarEspecieAnimales } = require("./ListarEspecieAnimales");
 const { mostrarDatosAnimal } = require("./mostrarDatosAnimal");
 const { dniEnbd } = require("./schemas/Duenyo");
+const { cambiarNombre } = require("./cambiarNombre");
 
 inquirer.prompt(preguntasDni).then(async (response) => {
   const hayDuenyo = await dniEnbd(response.dni);
@@ -18,6 +19,7 @@ inquirer.prompt(preguntasDni).then(async (response) => {
         mostrarDatosAnimal(response.chipAnimal);
       } else if (response.opcion === "cambiarNombre") {
         cambiarNombre(response.dni, response.nuevoNombre);
+      }
     });
   }
 });
