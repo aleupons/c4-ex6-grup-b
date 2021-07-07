@@ -16,7 +16,8 @@ inquirer.prompt(preguntasDni).then(async (response) => {
         listarEspecieAnimales(response.especie);
       } else if (response.opcion === "datosUnAnimal") {
         mostrarDatosAnimal(response.chipAnimal);
-      }
+      } else if (response.opcion === "cambiarNombre") {
+        cambiarNombre(response.dni, response.nuevoNombre);
     });
   }
 });
