@@ -38,16 +38,7 @@ const preguntas = [
     type: "input",
     when: (respuestaAnterior) => respuestaAnterior.opcion === "datosUnAnimal",
   },
-  {
-    name: "animalParaAdoptar",
-    message: "¿Qué animal desearia adoptar?",
-    type: "list",
-    choices: [
-      { value: "chipAnimal", name: "NommbreAnimal" },
-      { value: "chipAnimals", name: "NommbreAnimals" },
-    ],
-    when: (respuestaAnterior) => respuestaAnterior.opcion === "adoptarUnAnimal",
-  },
+
   {
     name: "nuevoNombre",
     message: "Por favor indique un nuevo nombre: ",
