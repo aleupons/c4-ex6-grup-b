@@ -4,6 +4,11 @@ const { Animal } = require("../../schemas/Animal");
 const { Duenyo } = require("../../schemas/Duenyo");
 const { Especie } = require("../../schemas/Especie");
 
+const listarTodosAnimales = async () => {
+  const animales = await Animal.findAll();
+  return animales;
+};
+
 const listarAnimales = async (id) => {
   try {
     const animales = await Animal.findAll({
@@ -143,4 +148,5 @@ module.exports = {
   mostrarDatosAnimal,
   cambiarNombre,
   adoptarAnimal,
+  listarTodosAnimales,
 };
