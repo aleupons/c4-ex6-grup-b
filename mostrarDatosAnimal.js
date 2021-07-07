@@ -1,11 +1,12 @@
 const chalk = require("chalk");
 const Animal = require("./schemas/Animal");
 
-const mostrarDatosAnimal = async (nChip) => {
+const mostrarDatosAnimal = async (idDuenyo, nChip) => {
   try {
     const animal = await Animal.findOne({
       where: {
         chip: nChip,
+        duenyo: idDuenyo,
       },
     });
     const {

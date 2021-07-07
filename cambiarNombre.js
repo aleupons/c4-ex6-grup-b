@@ -1,9 +1,9 @@
 const { Duenyo } = require("./schemas/Duenyo");
 
-const cambiarNombre = async (dni, nuevoNombre) => {
+const cambiarNombre = async (id, nuevoNombre) => {
   try {
     const duenyo = await Duenyo.findOne({
-      where: { dni },
+      where: { id },
     });
     const modificarNombre = await Duenyo.update(
       {

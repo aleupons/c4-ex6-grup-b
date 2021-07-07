@@ -1,10 +1,11 @@
 const Animal = require("./schemas/Animal");
 const Especie = require("./schemas/Especie");
 
-const listarAnimales = async () => {
+const listarAnimales = async (id) => {
   try {
     const animales = await Animal.findAll({
       include: { model: Especie },
+      where: { duenyo: id },
       order: [
         ["especie", "DESC"],
         ["nombre", "DESC"],
