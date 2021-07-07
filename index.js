@@ -11,7 +11,6 @@ inquirer.prompt(preguntasDni).then(async (response) => {
   const { hayDuenyo, duenyo } = await dniEnbd(response.dni);
   if (hayDuenyo) {
     inquirer.prompt(preguntas).then(async (response) => {
-      console.log(response); // Per veure forma de l'objecte respostes
       if (response.opcion === "todosLosAnimales") {
         listarAnimales(duenyo.id);
       } else if (response.opcion === "todosAnimalesEspecie") {
@@ -21,7 +20,7 @@ inquirer.prompt(preguntasDni).then(async (response) => {
       } else if (response.opcion === "cambiarNombre") {
         cambiarNombre(duenyo.id, response.nuevoNombre);
       } else if (response.opcion === "adoptarUnAnimal") {
-        await adoptarAnimal(response.opcion);
+        await adoptarAnimal(response.opcion, duenyo.id);
       }
     });
   }
