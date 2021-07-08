@@ -9,6 +9,11 @@ const listarTodosAnimales = async () => {
   return animales;
 };
 
+const getAnimal = async (id) => {
+  const animal = await Animal.findByPk(id);
+  return animal;
+};
+
 const listarAnimales = async (id) => {
   try {
     const animales = await Animal.findAll({
@@ -149,4 +154,5 @@ module.exports = {
   cambiarNombre,
   adoptarAnimal,
   listarTodosAnimales,
+  getAnimal,
 };
