@@ -8,7 +8,6 @@ const router = express.Router();
 
 router.get("/", async (req, res, next) => {
   const animales = await listarTodosAnimales();
-  console.log(animales);
   res.json(animales);
 });
 
