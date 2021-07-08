@@ -1,3 +1,4 @@
+/* require("./servidor"); */
 const inquirer = require("inquirer");
 const { preguntasDni, preguntas } = require("./datos/preguntas");
 const {
@@ -25,5 +26,7 @@ inquirer.prompt(preguntasDni).then(async (response) => {
         cambiarNombre(duenyo.id, response.nuevoNombre);
       }
     });
+  } else {
+    process.exit(0);
   }
 });

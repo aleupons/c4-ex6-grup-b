@@ -33,11 +33,16 @@ const Duenyo = sequelize.define(
 );
 
 const dniEnbd = async (dniEscrito) => {
-  const duenyo = await Duenyo.findOne({ where: { dni: dniEscrito } });
-  return {
-    hayDuenyo: !!duenyo,
-    duenyo: duenyo.dataValues,
-  };
+  try {
+    const duenyo = await Duenyo.findOne({ where: { dni: dniEscrito } });
+    return {
+      hayDuenyo: !!duenyo,
+      duenyo: duenyo.dataValues,
+    };
+  } catch (error) {
+    console.log("No existe ningún dueño con este DNI");
+    return { hayDuenyo: null, duenyo: null };
+  }
 };
 
 module.exports = {
