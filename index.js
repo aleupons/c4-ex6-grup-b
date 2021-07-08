@@ -1,4 +1,4 @@
-/* require("./servidor"); */
+require("./servidor");
 const inquirer = require("inquirer");
 const { preguntasDni, preguntas } = require("./datos/preguntas");
 const {
