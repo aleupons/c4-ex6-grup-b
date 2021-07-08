@@ -7,7 +7,7 @@ const {
   mostrarDatosAnimal,
   adoptarAnimal,
   cambiarNombre,
-} = require("./bd/consultas/consultasAnimales");
+} = require("./bd/consultas/programaAnimales");
 const { dniEnbd } = require("./schemas/Duenyo");
 
 inquirer.prompt(preguntasDni).then(async (response) => {
