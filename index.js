@@ -26,5 +26,7 @@ inquirer.prompt(preguntasDni).then(async (response) => {
         cambiarNombre(duenyo.id, response.nuevoNombre);
       }
     });
+  } else {
+    process.exit(0);
   }
 });
